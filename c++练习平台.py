@@ -15,7 +15,7 @@ def base64_api(img):
     with open(img, 'rb') as f:
         base64_data = base64.b64encode(f.read())
         b64 = base64_data.decode()
-    data = {"username": "suyou", "password": "Wpachong159", "typeid": 3, "image": b64}
+    data = {"username": "", "password": "", "typeid": 3, "image": b64}
     result = json.loads(requests.post("http://api.ttshitu.com/predict", json=data).text)
     if result['success']:
         return result["data"]["result"]
